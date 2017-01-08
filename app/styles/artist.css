@@ -1,0 +1,16 @@
+.page_container_artist{
+  display: flex;
+  flex-direction: column;
+  padding-top: 58px;
+}
+
+.hero_artist {
+  background-image: url('../../assets/images/annie_cover2.jpg');
+  position:absolute;
+  display: table;
+	background-repeat: no-repeat;
+  background-position: left top;
+  margin: auto;
+  max-height:100%;
+  max-width:100%;
+}

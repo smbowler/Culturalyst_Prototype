@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+ -->    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/artist_signup.css">
+    <link rel="stylesheet" href="styles/discovery.css">
+    <link rel="stylesheet" href="styles/discovery_B.css">
+    <link rel="stylesheet" href="styles/artist.css">
+    <link rel="stylesheet" href="bower_components/soundManager2/demo/360-player/360player.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/soundManager2/demo/360-player/360player-visualization.css" rel="stylesheet">
+    <!-- endbuild -->
+     <!-- <base href="/">
+ -->  
+  </head>
+  <body ng-app="culturalystApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+<!--     <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <a class="navbar-brand" href="#/">culturalyst</a>
+          </div>
+
+          <div class="collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#/">Home</a></li>
+              <li><a ng-href="#/about">About</a></li>
+              <li><a ng-href="#/artist">Artist</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="container">
+    <navbar></navbar>
+    <div ng-view=""></div>
+    </div>
+
+
+    <!-- Firebase project initialization  -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+  <script>
+   // Initialize Firebase
+   var config = {
+     apiKey: "AIzaSyDNvSOSsHsVHvsySvJKDYIK0-sRnxO2J9I",
+     authDomain: "culturalystmvp-5860f.firebaseapp.com",
+     databaseURL: "https://culturalystmvp-5860f.firebaseio.com",
+     storageBucket: "culturalystmvp-5860f.appspot.com",
+     messagingSenderId: "164698565072"
+   };
+   firebase.initializeApp(config);
+  </script>
+
+<!--   Soundcloud project initialization
+ -->
+
+
+<!--  <script src="bower_components/soundManager2/soundmanager2-nodebug-jsmin.js"></script> -->
+<script src="bower_components/soundManager2/script/soundmanager2.js"></script>
+<script src="bower_components/soundManager2/demo/360-player/script/berniecode-animator.js"></script>
+<script src="bower_components/soundManager2/demo/360-player/script/excanvas.js"></script>
+<script src="bower_components/soundManager2/demo/360-player/script/360player.js"></script>
+
+  <script>
+  soundManager.setup({
+    url: '/path/to/swf-files/',
+    flashVersion: 9, // optional: shiny features (default = 8)
+    // optional: ignore Flash where possible, use 100% HTML5 mode
+    // preferFlash: false,
+    onready: function() {
+      // Ready to use; soundManager.createSound() etc. can now be called.
+    }
+  });
+  </script>
+
+    <script>
+threeSixtyPlayer.config = {
+  playNext: false, // stop after one sound, or play through list until end
+  autoPlay: false, // start playing the first sound right away
+  allowMultiple: true, // let many sounds play at once (false = one at a time)
+  loadRingColor: '#ccc',// amount of sound which has loaded
+  playRingColor: '#000', // amount of sound which has played
+  backgroundRingColor: '#eee', // "default" color shown underneath everything else
+  animDuration: 500,
+  animTransition: Animator.tx.bouncy// http://www.berniecode.com/writing/animator.html
+}
+  </script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/discovery.js"></script>
+        <script src="scripts/controllers/discovery_B.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/artist.js"></script>
+        <script src="scripts/controllers/artist_signup.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/services/auth1.js"></script>
+        <script src="scripts/directives/navbar/navbar.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
