@@ -43,6 +43,10 @@ md-toolbar h3 {
   font-weight: 500;
 }
 
+.loginSignupBtn{
+  font-size:x-small !important;
+}
+
 /*Uniform buttons in sidenav*/
 md-list-item > button {
   width:100%;
@@ -116,7 +120,7 @@ input.md-input:focus{ color: #E91E63; }
 
 /* Navbar Styling End */
 
-Styling textAngular
+/*Styling textAngular*/
 
 .ta-editor {
     min-height: 300px;
@@ -127,11 +131,6 @@ Styling textAngular
     margin:20px 0;
 }
 
-/*Signup Modal*/
-.login_signup_modal{
-  width:100%;
-
-}
 
 /*.browserupgrade {
   margin: 0.2em 0;

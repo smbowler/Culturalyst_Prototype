@@ -24,13 +24,13 @@
         </md-button> -->
       </div>
 
-      <div flex="70" id="nav_logo">
+      <div flex="40" id="nav_logo">
         <img src="../assets/images/logo_small.png">
       </div>
 
     <div class="navbar_right" layout="row" ng-hide="signedUser">
-       <md-button class="hide_link" id="login">
-       <a href="/#/login"><h3>  Login | Sign up</h3></a>
+       <md-button class="hide_link loginSignupBtn">
+       <a href="/#/login"><h3>  Login / Sign up</h3></a>
        </md-button>
        <md-button aria-label="Search" ng-show="isLoggedIn()" ng-click="showSearch = !showSearch">
          <md-icon md-svg-icon="search_black"></md-icon>
