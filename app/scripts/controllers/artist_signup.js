@@ -4,7 +4,7 @@
  * Controller for Artist Signup
  */
 angular.module('culturalystApp')
-  .controller('ArtistSignupCtrl',['$scope', 'auth1', function ($scope, auth1) {
+  .controller('ArtistSignupCtrl',['$scope', 'auth1', 'Upload', function ($scope, auth1, Upload) {
 
   	$scope.currentUser = {};
     $scope.selectedMedium;
@@ -15,7 +15,7 @@ angular.module('culturalystApp')
     auth1.getCurrentUser();
     console.log('current user', auth1.getCurrentUser());
   };
-
+  console.log('fireeeee: ', firebase);
   $scope.getCurrentUser();
 
     $scope.saveArtist = function(){
@@ -110,7 +110,42 @@ angular.module('culturalystApp')
     ];
 
 
+    //image upload
+    $scope.setImageRef = function() {
+      $scope.imageRef = $scope.storageRef.child('images' + '-' + $scope.currentUser.uid);
+    }
+
+    //set image preview
+    var imgFileInput = document.getElementById('imgFileInput');
+    var imgPreview = document.getElementById('profPhoto');
+    imgFileInput.addEventListener('change', function(e) {
+      if(imgFileInput.files && imgFileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          imgPreview.src = e.target.result;
+        }
+        reader.readAsDataURL(imgFileInput.files[0]);
+      }
+      $scope.photoToUpload = imgFileInput.files[0];
+    });
+
+    $scope.saveProfPhoto = function() {
+      $scope.imageRef.put($scope.photoToUpload).then(function(snapshot) {
+        console.log('Uploaded a profile photo!');
+        $scope.getOptimizedImgByURL(snapshot.downloadURL);
+      });
+    }
+
+    //found this site: https://imageoptim.com/api/get?username=ktqzvxbthh
+    //which works for image optimization. Just have to add the url in front of the original URL.
+    //it is free for now and in beta. NO account to log into, but should be fine for just starting off.
+    //Once we integrate a backend, we can use Kraken.io
+    $scope.imageOptimURL = 'https://img.gs/ktqzvxbthh/full/'
+
+    $scope.getOptimizedImgByURL = function(imgURL) {
+      return $scope.imageOptimURL + imgURL;
+    }
+
+    $scope.setImageRef();
 
   }]);
-
-

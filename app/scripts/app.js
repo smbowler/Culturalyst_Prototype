@@ -16,7 +16,8 @@
       'ngResource',
       'ngRoute',
       'ngSanitize',
-      'ngMaterial'
+      'ngMaterial',
+      'ngFileUpload'
     ])
     .config(function ($routeProvider, $mdIconProvider, $locationProvider) {
     $routeProvider
