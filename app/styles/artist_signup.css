@@ -126,7 +126,7 @@ The Art*/
 
 #theArt md-content{
 	border: 2px solid #ECEFF1;
-	
+
 }
 
 md-toolbar.toolbar_theArt {
@@ -200,6 +200,20 @@ button#savePropertiesButton {
 }
 
 #sample md-content{
+	border: 2px solid #ECEFF1;
+
+}
+
+#profImg{
+	padding: 20px;
+	max-width: 896px;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  min-width: 320px;
+}
+
+#profImg md-content{
 	border: 2px solid #ECEFF1;
 
 }
@@ -289,9 +303,9 @@ button#saveWorkButton {
 
 /*Responsive: Iphone6*/
 /*TODO: Add other device screen sizes*/
-/*@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
+/*@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
   	#steps {
@@ -302,8 +316,3 @@ button#saveWorkButton {
 
 
 /*TODO: Change hue of helper text in input fields*/
-
-
-
-
-
