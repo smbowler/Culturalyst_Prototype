@@ -126,10 +126,12 @@
 		<md-button ng-click="openProperties = !openProperties">Instructions</md-button>
 	</md-toolbar>
 	<md-content layout-padding>
-		<img id="profPhoto" src=""><br>
-		<label>Step 1: Select profile photo</label>
+		<label>Step 1: Name Photo</label>
+		<input ng-model="currentUser.photoName" type="text"> <md-button ng-click="setImageRef(currentUser.photoName)">Set Name</md-button>
+		<label>Step 3: Select profile photo</label>
 		<input type="file" id="imgFileInput"><br>
-		<label>Step 2: Upload profile photo</label>
+		<label>Step 3: Upload profile photo</label>
+		<img id="profPhoto" src=""><br>
 		<md-button  id="saveProfPhoto" aria-label="FAB" ng-click="saveProfPhoto()">
 			Upload Photo
 		</md-button>

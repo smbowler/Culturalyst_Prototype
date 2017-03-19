@@ -83,19 +83,39 @@
 		  </div>
           <div class="query_results" layout-padding>
 						<a  ng-repeat="artist in results  | filter: searchText" href="/#/artist/{{artist.selectedMedium}}/{{artist.uid}}">
-							 <md-card class="query_card" md-whiteframe="3">
+							 <!-- <md-card class="query_card" md-whiteframe="3">
 					        <img ng-src="../../assets/images/cover_4.14.1622.png" class="md-card-image">
-				
-					        <md-card-actions layout="row" layout-align="end center">
+									<img ng-src="{{artist.profImg}}" class="md-card-image">
+					        <md-card-actions layout="row" layout-align="end center"> -->
 <!-- 					          <md-button class="md-fab" ng-click="play()" aria-label="Show Menu" style="background-color: #ffdad5">
 			          			<md-icon md-svg-icon="playArrow_black"></md-icon>
 			        			</md-button> -->
 <!-- 			        			<div class="ui360">
 										 <a href="/path/to/an.mp3">play "an.mp3"</a>
 										</div> -->
-					        	{{artist.name}} {{artist.name_last}}
+<!-- 					        	{{artist.name}} {{artist.name_last}}
 					        </md-card-actions>
-					      </md-card>
+					      </md-card> -->
+					       <md-card class="query_card" md-whiteframe="3">
+					        <md-card-header>
+					          <md-card-header-text>
+					            <span class="md-title">{{artist.name}} {{artist.name_last}}
+					        </md-card-actions></span>
+					            <span class="md-subhead">{{artist.selectedSubmedium[0]}}</span>
+					          </md-card-header-text>
+					        </md-card-header>
+					        <img ng-src="{{artist.profImg}}" class="md-card-image" alt="Washed Out">
+<!-- 					        <md-card-title>
+ -->					          <!-- <md-card-title-text>
+					            <span class="md-headline">Card header</span>
+					          </md-card-title-text> -->
+					        <!-- </md-card-title> -->
+					        <!-- <md-card-content>
+					          <p>
+					          	{{artist.story}}
+					          </p>
+					        </md-card-content> -->
+					     </md-card>
 					   </a>
 					</div>
         </md-content>

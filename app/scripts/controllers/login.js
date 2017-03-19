@@ -21,6 +21,15 @@ angular.module('culturalystApp')
  }
 
  $scope.email = function(user){
+    // if(user.email && user.password){
+    //   //do stuff
+
+
+    // }
+    // else{
+      
+    //  notifications.showSimpleToast('entyer');
+    // }
    if(user.email || user.password == null){
       notifications.showSimpleToast('entyer');
    }
