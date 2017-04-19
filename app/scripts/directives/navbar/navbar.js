@@ -48,6 +48,24 @@ angular.module('culturalystApp')
 
   $scope.getCurrentUser();
 
+/*SEARCH IN NAVBAR*/
+ $scope.search = null;
+  $scope.showPreSearchBar = function() {
+    return $scope.search === null;
+  };
+  $scope.initiateSearch = function() {
+    console.log('initiating search');
+    $scope.search = '';
+  };
+  $scope.showSearchBar = function() {
+    return $scope.search !== null
+  };
+  $scope.endSearch = function() {
+    return $scope.search = null;
+  };
+  $scope.submit = function() {
+    console.error('Search function not yet implemented');
+  }
   /*
 **************************************************
 **************************************************

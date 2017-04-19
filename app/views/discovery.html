@@ -11,7 +11,7 @@
 <div class="page_container_discover">
 <!-- 	<div class="discovery_hero"></div>
   <div class="picture-overlay"></div> -->
-  <h1>{{selectedMedium.name}}</h1>
+  <h1 id="discovery_title">{{selectedMedium.name}}</h1>
   <md-select class="media_submedia" ng-model="selectedMedium" placeholder="Medium" md-on-close="loadSubMediums(selectedMedium); ifMusic(selectedMedium); getArtists(selectedMedium)" ng-selected="selectedMedium">
 	    <md-option ng-value="medium" ng-repeat="medium in mediums">{{ medium.name }}</md-option>
 	  </md-select>
@@ -71,7 +71,7 @@
   <md-content ng-show='selectionMade()'>
     <md-tabs md-dynamic-height md-border-bottom md-center-tabs>
       <md-tab label="Artists">
-        <md-content class="md-padding">
+        <md-content id="tab_background"class="md-padding">
 	    <md-button class="md-primary" md-fab ng-show='selectionMade()' ng-click="openBasics = !openBasics">Filters</md-button>
 
 			<div class="toggle-content" ng-show="openBasics">
@@ -121,7 +121,7 @@
         </md-content>
       </md-tab>
       <md-tab label="Events">
-        <md-content class="md-padding">
+        <md-content id="tab_background" class="md-padding">
           <h1 class="md-display-2">Events</h1>
           <p>Events</p>
         </md-content>

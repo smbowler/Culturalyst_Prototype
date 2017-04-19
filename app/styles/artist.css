@@ -1,7 +1,7 @@
 .page_container_artist{
   display: flex;
   flex-direction: column;
-  padding-top: 58px;
+ /* padding-top: 58px;*/
 }
 
 .hero_artist {
@@ -14,3 +14,40 @@
   max-height:100%;
   max-width:100%;
 }
+
+.artistNav{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#artistName{
+margin-left: 20px;
+}
+
+#socialProperties{
+  align-self: center;
+  margin-right: 10px;
+}
+
+#socialProperties a{
+  text-decoration: none;
+}
+
+#artistSig{
+  align-self: center;
+}
+
+#artistSig img{
+  height:25px;  
+}
+
+/*.picture-overlay {*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*height: 400px;*/
+  /*justify-content: flex-end;*/
+  /*align-items: flex-end;*/
+  /*padding-right:10px;*/
+  /*padding-bottom: 5px;*/
+/*}*/

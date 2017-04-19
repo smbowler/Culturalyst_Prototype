@@ -1,9 +1,10 @@
 .page_container_discover{
-  padding-top: 275px;
+  padding-top: 175px;
   display: flex;
   flex-direction: column;
-/*  padding-right: 10px;
-  padding-left: 10px;*/
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #f7f9fb;
 }
 
 .discovery_hero {
@@ -42,15 +43,18 @@
   flex-direction: column;
   justify-content: space-between;
 /*  height:400px;*/
-  background-color: white;
+  background-color: #f7f9fb;
   align-items: center;
 }
 
 .query_card{
  /* height: 200px;*/
-  width: 350px;
+  width: 325px;
   margin:10px;
+  box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
 }
+
 
 .sm2-360ui{
   /* size of the container for the circle, etc. */

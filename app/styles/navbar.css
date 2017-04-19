@@ -22,7 +22,7 @@ button#login {
 }
 
 .navbar_main{
-  position: fixed;
+/*  position: fixed;*/
   z-index: 999;
   background-color: rgba(255,255,255,0.5) !important;
 }
@@ -36,6 +36,17 @@ button#login {
 #search_box {
   display: flex;
   justify-content: flex-end;
+}
+
+/*#left_search_icon{
+  margin-right:5px;
+}*/
+md-toolbar#search-bar {
+    height: 14px;
+}
+
+input#search-input {
+  margin-top: 21px;
 }
 
 md-toolbar h3 {
@@ -159,6 +170,9 @@ input.md-input:focus{ color: #E91E63; }
     }
     .md-toolbar-tools .md-button{
       min-width:25px;
+    }
+    #search-bar .md-button{
+      min-width: 25px;
     }
 
    /* Adds margin to login button to center logo on mobile*/

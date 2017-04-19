@@ -2,7 +2,7 @@
 
   <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
-    <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1 navbar_main">
+    <md-toolbar id="search-bar"  layout="row"  ng-show="showPreSearchBar()" layout-align="center center" class="md-whiteframe-z1 navbar_main">
 
       <div class="navbar_left">
         <md-button id="main" class="menu" ng-click="openLeftMenu()" aria-label="Show Menu">
@@ -24,49 +24,43 @@
         </md-button> -->
       </div>
 
-      <div flex="40" id="nav_logo">
+      <div flex="55" id="nav_logo">
         <img src="../assets/images/logo_small.png">
       </div>
 
     <div class="navbar_right" layout="row" ng-hide="signedUser">
-       <md-button class="hide_link loginSignupBtn">
+<!--        <md-button class="hide_link loginSignupBtn">
        <a href="/#/login"><h3>  Login / Sign up</h3></a>
-       </md-button>
-       <md-button aria-label="Search" ng-show="isLoggedIn()" ng-click="showSearch = !showSearch">
+       </md-button> -->
+     </div>
+       <md-button aria-label="Search" ng-click="initiateSearch()">
          <md-icon md-svg-icon="search_black"></md-icon>
        </md-button>
-     </div>
-     <div class="navbar_right" layout="row" ng-show="signedUser">
+
+
+<!--      <div class="navbar_right" layout="row" ng-show="signedUser">
         <img  class="profile-image" ng-src="{{signedUser.photoURL}}">
-     </div>  
+     </div>   -->
     </md-toolbar>
+             <!-- Search bar -->
 
-<!--     <md-toolbar class="md-hue-1" ng-show="showSearch">
-      <div class="md-toolbar-tools">
-        TODO: Have search bar close + clear by pressing X
-
-        <md-button ng-click="showSearch = !showSearch" aria-label="Back">
-          <md-icon md-svg-icon="clear_black"></md-icon>
+      <md-toolbar id="search-bar" layout="row" ng-show="showSearchBar()" layout-align="center center" class="md-whiteframe-z1 navbar_main">
+        <!-- Input Text -->
+        <md-button id="left_search_icon" ng-click="submit()">
+          <md-icon md-svg-icon="search_black"></md-icon>
         </md-button>
 
-        <md-input-container id="search_box" md-no-float flex>
-          <input ng-model="nav.search" type="text" placeholder="Search">
+        <md-input-container flex>
+          <!-- <label for="search">Search</label> -->
+          <input id="search-input" type="text" ng-model="search" />
         </md-input-container>
 
-          TODO: Have search functionality begin on keyboard "enter" or by pressing "check"
-        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-          <md-icon md-svg-icon="enter_black"></md-icon>
+        <md-button class="md-icon-button" ng-click="endSearch()">
+          <md-icon md-svg-icon="clear_black"></md-icon>
         </md-button>
+      </md-toolbar>
 
-        </div>
-       
-      </md-toolbar> -->
-
-
-
-  </div>
-
-  <md-sidenav md-component-id="left" class="md-sidenav-left">
+  <md-sidenav md-component-id="left" mode="push" class="md-sidenav-left md-medium-tall">
     <md-toolbar class="md-whiteframe-z1" style="background-color: rgba(0, 0, 0, 0.5);" >
       <h3 ng-show="!isLoggedIn()"></h3>
       <div layout="column" ng-show="isLoggedIn()"></div>
@@ -93,11 +87,11 @@
           </md-button>
       </md-list-item>
 
-<!--       <md-list-item class="hide_link">
+      <md-list-item class="hide_link">
           <md-button ng-click="closeLeftMenu()">
           <a href="/#/discovery_B"><h3>Discovery Option 2</h3></a>
           </md-button>
-      </md-list-item> -->
+      </md-list-item>
       <md-divider ></md-divider>
       <md-subheader>For Artists</md-subheader>
 

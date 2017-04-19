@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
+
+
+    <!-- css for imageSwipe    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+
+
+
+
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -52,10 +61,12 @@
         </div>
       </div>
     </div> -->
+    <md-sidenav-container fullscreen>
     <div class="container">
     <navbar></navbar>
     <div ng-view=""></div>
     </div>
+    </md-sidenav-container>
 
 
     <!-- Firebase project initialization  -->
@@ -136,8 +147,8 @@ threeSixtyPlayer.config = {
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/directives/navbar/navbar.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="scripts/directives/navbar/navbar.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/discovery.js"></script>
         <script src="scripts/controllers/discovery_B.js"></script>
@@ -148,5 +159,11 @@ threeSixtyPlayer.config = {
         <script src="scripts/services/auth1.js"></script>
         <script src="scripts/services/notifications.js"></script>
         <!-- endbuild -->
+
+
+<!-- scripts for imageSwipe -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+
 </body>
 </html>

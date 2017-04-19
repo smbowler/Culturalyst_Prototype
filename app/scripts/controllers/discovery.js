@@ -1,14 +1,20 @@
 'use strict';
 
 angular.module('culturalystApp')
-  .controller('DiscoveryCtrl',['$scope','auth1',function ($scope, auth1) {
+  .controller('DiscoveryCtrl',['$scope','auth1', '$location', '$anchorScroll', function ($scope, auth1, $location, $anchorScroll) {
 
 // console.log(auth);
 	  //ng-models
   $scope.selectedMedium;
   $scope.selectedSubmedium = {};
   $scope.results;
+  
   $scope.musicResultsFB = [];
+
+  
+  $scope.toTop = function(){
+   $anchorScroll();
+  };
 
   	$scope.loadSubMediums = function(medium){
       console.log(medium);
@@ -24,11 +30,16 @@ angular.module('culturalystApp')
       }
     };
 
+  // $scope.setLocation = function(medium){
+  //   console.log('in this bish');
+  //   $location.search(medium);
+  // }
+
   $scope.getArtists = function(medium){
     //resetting results array
+    $scope.firstArray = [];
     $scope.results = [];
     var Medium = medium.name;
-    console.log(Medium);
     firebase.database().ref('/Artists/' + Medium).once('value').then(function(snapshot){
       console.log(snapshot.val());
       var obj = snapshot.val();
@@ -36,9 +47,9 @@ angular.module('culturalystApp')
         var innerObj = obj[key]
         innerObj.uid = key;
         console.log(innerObj);
-        $scope.results.push(innerObj);
+        $scope.firstArray.push(innerObj);
       }
-      console.log($scope.results);
+      $scope.results = $scope.firstArray;
     })
   }
 
@@ -193,6 +204,5 @@ angular.module('culturalystApp')
 {"id":36,"first_name":"Jimmy","last_name":"Griffin","medium":"Hip-hop","cover_photo":"https://unsplash.it/g/200/300"},
 {"id":37,"first_name":"Dorothy","last_name":"Perry","medium":"Country","cover_photo":"https://unsplash.it/g/200/300"}
 ];
-
 
   }]);
