@@ -2,9 +2,9 @@
     <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
         <md-toolbar id="search-bar" layout="row" ng-show="showPreSearchBar()" layout-align="center center" class="md-whiteframe-z1 navbar_main">
             <div class="navbar_left">
-                <!--         <md-button id="main" class="menu" ng-click="openLeftMenu()" aria-label="Show Menu">
-          <md-icon md-svg-icon="menu_black"></md-icon>
-        </md-button> -->
+                <md-button id="main" class="menu" ng-click="openLeftMenu()" aria-label="Show Menu">
+                    <md-icon md-svg-icon="menu_black"></md-icon>
+                </md-button>
                 <!--  <md-button class="hide_link" hide show-lg>
           <a ui-sref="main" ui-sref-active="active">
             <h3>Home</h3>
@@ -63,19 +63,24 @@
                 </md-list-item>
                 <md-list-item ng-show="!isLoggedIn()" class="hide_link">
                     <md-button ng-click="closeLeftMenu()">
-                        <a href="/#/about"><h3>About</h3></a>
+                        <a href="/#/about"><h3>about</h3></a>
                     </md-button>
                 </md-list-item>
-                <md-list-item class="hide_link">
+                <md-list-item ng-show="!isLoggedIn()" class="hide_link">
+                    <md-button ng-click="closeLeftMenu()">
+                        <a href="/#/about"><h3>Give us Feedback</h3></a>
+                    </md-button>
+                </md-list-item>
+                <!--                 <md-list-item class="hide_link">
                     <md-button ng-click="closeLeftMenu()">
                         <a href="/#/discovery"><h3>Discovery</h3></a>
                     </md-button>
-                </md-list-item>
-                <md-list-item class="hide_link">
+                </md-list-item> -->
+                <!--                 <md-list-item class="hide_link">
                     <md-button ng-click="closeLeftMenu()">
                         <a href="/#/discovery_B"><h3>Discovery Option 2</h3></a>
                     </md-button>
-                </md-list-item>
+                </md-list-item> -->
                 <md-divider></md-divider>
                 <md-subheader>For Artists</md-subheader>
                 <!--       TODO: Make Artist profile show up only if user is logged in & is artist -->
@@ -92,17 +97,17 @@
                 </md-list-item>
                 <md-divider></md-divider>
                 <md-divider></md-divider>
-                <md-subheader>Account</md-subheader>
-                <md-list-item ng-show="!isLoggedIn()" class="hide_link">
+                <!-- <md-subheader>Account</md-subheader> -->
+                <!--                 <md-list-item ng-show="!isLoggedIn()" class="hide_link">
                     <md-button ng-click="closeLeftMenu()">
                         <a href="/#/artist_signup"><h3>Your CulturaLYST</h3></a>
                     </md-button>
-                </md-list-item>
-                <md-list-item ng-show="!isLoggedIn()" class="hide_link">
+                </md-list-item> -->
+                <!--                 <md-list-item ng-show="!isLoggedIn()" class="hide_link">
                     <md-button ng-click="logout(); closeLeftMenu()">
                         <a><h3>Logout</h3></a>
                     </md-button>
-                </md-list-item>
+                </md-list-item> -->
             </md-list>
         </md-sidenav>
     </div>

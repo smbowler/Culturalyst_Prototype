@@ -42,9 +42,6 @@ angular.module('culturalystApp')
     },2000)
   }
 
-  $scope.searchObj = {
-    'param1'= $scope.selectedMedium.name;
-  }
 
   //Makes call to get artists from Firebase Database 
   $scope.getArtists = function(medium) {
@@ -53,7 +50,6 @@ angular.module('culturalystApp')
       $scope.firstArray = [];
       $scope.results = [];
       var Medium = medium.name;
-      $location.path(medium.name);
       firebase.database().ref('/Artists/' + Medium).once('value').then(function(snapshot) {
           console.log(snapshot.val());
           var obj = snapshot.val();
