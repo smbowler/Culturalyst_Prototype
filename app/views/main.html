@@ -1,72 +1,140 @@
 <div class="hero">
-  <div class="picture-overlay">
-  </div>
+    <div class="picture-overlay">
+    </div>
 </div>
-
-<div class="main_container about">
+<!-- <div class="main_container about">
 <h2 style='text-align: center;'>Description of Culturalyst</h2>
   <h3>Culturalyst is soulful technology, interatively built, that makes it easy to discovery and support the people who make local art and culture. </h3>
-</div>
-
+</div> -->
 <div class="main_container description">
-<h2 style='text-align: center;'>A User's Favorite Mediums/Genres of Art</h2>
-    <md-button class="md-fab big-fab" aria-label="Big FAB"> Blues
-    </md-button>
-    <md-button class="md-fab big-fab" aria-label="Big FAB"> Ballet
-    </md-button>
-    <md-button class="md-fab big-fab" aria-label="Big FAB"> Costumes
-    </md-button>
-    <md-button class="md-fab big-fab" aria-label="Big FAB"> Puppets
-    </md-button>
+    <!--   <img src='../assets/images/city_based_directory.jpg'> -->
+    <h3>a directory for Our City's culture</h3>
+    <p>make no mistake, New Orleans' is special because of its people and how they express themselves. use this directory to find the people in our city who speak to your soul. </p>
 </div>
+<div class="page_container_discover">
+    <h1 id="discovery_title">{{selectedMedium.name}}</h1>
+    <h1 ng-hide="selectionMade()">Discover Culture</h1>
+    <h4>{{$scope.selectedSubmedium}}</h4>
+    <md-select class="media_submedia" ng-model="selectedMedium" placeholder="Medium" md-on-close="loadSubMediums(selectedMedium); ifMusic(selectedMedium); getArtists(selectedMedium)" ng-selected="selectedMedium">
+        <md-option ng-value="medium" ng-repeat="medium in mediums">{{ medium.name }}</md-option>
+    </md-select>
+    <md-select class="media_submedia" ng-model="selectedSubmedium" placeholder="Genre" md-on-close="test()" ng-selected="selectedSubmedium" multiple>
+        <md-option ng-value="submedium" ng-repeat="submedium in submedia">{{submedium}}</md-option>
+    </md-select>
+    <div class="artist_events">
+        <md-content ng-show='selectionMade()'>
+            <md-tabs md-dynamic-height md-border-bottom md-center-tabs>
+                <md-tab label="Artists">
+                    <md-content id="tab_background" class="md-padding">
+                        <!--       <md-button class="md-primary" md-fab ng-show='selectionMade()' ng-click="openBasics = !openBasics">Filters</md-button> -->
+                        <!--       <div class="toggle-content" ng-show="openBasics">
+        <div>
+        <h6>DATE</h6><md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+        <label>Search: <input ng-model="searchText"></label>
+        </div> -->
+                        <div class="query_results hide_link" layout-padding>
 
-
-<div class="parent_curated">
- <h2 style='text-align: center;'>A Local Scene: Frenchmen Street</h2>
-<div class="main_container curated">
- 
-      <md-button class="md-fab big-fab" aria-label="Big FAB"> Spotted Cat
-      </md-button>
-      <md-button class="md-fab big-fab" aria-label="Big FAB"> DBA
-      </md-button>
-      <md-button class="md-fab big-fab" aria-label="Big FAB"> Cafe Negril
-      </md-button>
-      <md-button class="md-fab big-fab" aria-label="Big FAB"> Maison
-      </md-button>
-  </div>
-</div>
-
-<div>
-  <h2 style='text-align: center;'>Art inspired by Causes</h2>
-  <div class="main_container categories">
-      <md-button class="md-fab big-fab" aria-label="Big FAB">LGBTQ Artists
-      </md-button>
-      <md-button class="md-fab big-fab" aria-label="Big FAB">Black Lives <br/> Matter  Artists
-      </md-button>
-      <md-button class="md-fab big-fab" aria-label="Big FAB">Coastal <br/> Restoration <br/> Artists
-      </md-button>
-      <md-button class="md-fab big-fab" aria-label="Big FAB">
-      </md-button>
-  </div>
-</div>
-
-<!-- <div class="main_container featured"> -->
-<!-- // TODO: Refactor so that the bottomsheet opens on each independent card -->   
-<!--     <md-card ng-repeat="artist in featured"  flex>
-        <md-content flex id="content">
-          <img src="../../assets/images/artist_profiles/{{artist.cover}}.png" class="md-card-image" alt="Cover">
-          <md-card-header>
-            <md-card-avatar>
-              <img class="md-user-avatar" src="../../assets/images/artist_profiles/{{artist.profile}}" alt="Cover"/>
-            </md-card-avatar>
-            <md-card-header-text>
-              <span class="md-title">{{artist.name}}</span>
-              <span class="md-subhead">Graffiti</span>
-            </md-card-header-text>
-            <md-button class="md-icon-button contact" ng-click="openBottomSheet()" aria-label="Favorite">
-                <md-icon md-svg-icon="search_black"></md-icon>
-            </md-button>
-          </md-card-header>
+                            <a ng-repeat="artist in results  | filter: searchText" href="/#/artist/{{artist.selectedMedium}}/{{artist.uid}}">
+<!--                                 <md-card class="query_card" md-whiteframe="3">
+                                    <md-card-header>
+                                        <md-button class="md-fab" ng-click="play()" aria-label="Show Menu" style="background-color: #ffdad5">
+                                            <md-icon md-svg-icon="playArrow_black"></md-icon>
+                                        </md-button>
+                                        <md-card-header-text>
+                                            <span class="md-title">{{artist.name}} {{artist.name_last}}</span>
+                                            <span class="md-subhead">{{artist.selectedSubmedium[0]}}</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <img ng-src="{{artist.profImg}}" class="md-card-image" alt="Washed Out">
+                                </md-card> -->
+                                <md-card>
+                                    <img ng-src="{{artist.profImg}}" class="md-card-image" alt="Washed Out">
+                                    <md-card-header>
+                                        <div id="card_play_button_included">
+                                            <md-card-header-text>
+                                                <span class="hide_link md-title">{{artist.name}}{{artist.name_last}}</span>
+                                                <span class="hide_link md-subhead">{{artist.selectedSubmedium[0]}}</span>
+                                                <span class="hide_link md-caption">{{artist.neighborhood}}</span>
+                                            </md-card-header-text>
+                                        </div>
+                                    </md-card-header>
+                                    <md-card-actions layout="row" layout-align="end center">
+                                    </md-card-actions>
+                                </md-card>
+                            </a>
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Events">
+                </md-tab>
+            </md-tabs>
         </md-content>
-      </md-card>  -->
-<!-- </div> -->
+    </div>
+</div>
+<div class="main_container featured hide_link" ng-hide='selectionMade()'>
+    <!--   <h4 id="discovery_title">Featured Artists & Culture Bearers</h4> -->
+    <h3>featured artists & culture bearers</h3>
+    <a href="https://www.anniebowler.com">
+        <md-card>
+            <img ng-src="../assets/images/city_based_directory.jpg" class="md-card-image" alt="Washed Out">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Annie Bowler</span>
+                    <span class="md-subhead">Illustration</span>
+                    <span class="md-caption">French Quarter</span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-actions layout="row" layout-align="end center">
+                <!-- <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+          </md-button> -->
+            </md-card-actions>
+        </md-card>
+    </a>
+    <a href="https://www.skilouise.com">
+        <md-card>
+            <img ng-src="../assets/images/rodney.jpg" class="md-card-image" alt="Washed Out">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="hide_link md-title">Rodney Touche</span>
+                    <span class="hide_link md-subhead">Motorcycle Racer, Photographer</span>
+                    <span class="hide_link md-caption">Holy Cross</span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-actions layout="row" layout-align="end center">
+                <!-- <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+          </md-button> -->
+            </md-card-actions>
+        </md-card>
+    </a>
+    <md-card>
+        <img ng-src="../assets/images/aaron_lopez.png" class="md-card-image" alt="Washed Out">
+        <md-card-header>
+            <div id="card_play_button_included">
+                <md-card-header-text>
+                    <span class="hide_link md-title">Aaron Lopez-Barrantes</span>
+                    <span class="hide_link md-subhead">Singer Songwriter</span>
+                    <span class="hide_link md-caption">Bayou St. John</span>
+                    <md-button class="md-fab" ng-click="play()" aria-label="Show Menu" style="background-color: #ffdad5">
+                        <md-icon md-svg-icon="playArrow_black"></md-icon>
+                    </md-button>
+                </md-card-header-text>
+            </div>
+        </md-card-header>
+        <md-card-actions layout="row" layout-align="end center">
+        </md-card-actions>
+    </md-card>
+</div>

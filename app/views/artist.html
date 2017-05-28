@@ -1,269 +1,148 @@
-<!--   <div ng-hide="{{artist}}">
-    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-  </div> -->
-
 <div>
-  
-
-<div class="page_container_artist">
-	<div ng-click="runSwipe()" class="hero" id="btn top" style="background-image:url('{{selectedArtist.profImg}}') !important">
-
-  </div>
-    <!-- <button id="btn" ng-click="runSwipe()">Open $$ PhotoSwipe</button> -->
-
-<!-- photoswipe modal -->
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe. 
-         It's a separate element, as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-        <div class="pswp__container">
-            <!-- don't modify these 3 pswp__item elements, data is added later on -->
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
+    <div class="page_container_artist">
+        <div ng-click="runSwipe()" class="hero" id="btn top" style="background-image:url('{{selectedArtist.profImg}}') !important">
         </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
+        <!-- <button id="btn" ng-click="runSwipe()">Open $$ PhotoSwipe</button> -->
+        <!-- photoswipe modal -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- Background of PhotoSwipe. 
+         It's a separate element, as animating opacity is faster than rgba(). -->
+            <div class="pswp__bg"></div>
+            <!-- Slides wrapper with overflow:hidden. -->
+            <div class="pswp__scroll-wrap">
+                <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+                <div class="pswp__container">
+                    <!-- don't modify these 3 pswp__item elements, data is added later on -->
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <!--  Controls are self-explanatory. Order can be changed. -->
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
                     </div>
                 </div>
             </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-          </div>
-
         </div>
-
-</div>
-
-
-<!--  <div class="hero"></div> -->
-  <div class="artistNav">
-    <div id='artistName'>
-      <h3>{{selectedArtist.name}} {{selectedArtist.name_last}}</h3>
+        <!--  <div class="hero"></div> -->
+        <div class="artistNav">
+            <div id='artistName'>
+                <h3>{{selectedArtist.name}} {{selectedArtist.name_last}}</h3>
+            </div>
+            <div id='socialProperties'>
+                <a href="https://www.nytimes.com">
+                    <md-icon md-svg-icon="instagram"></md-icon>
+                </a>
+                <a href="https://www.nba.com">
+                    <md-icon md-svg-icon="facebook"></md-icon>
+                </a>
+                <a href="https://www.espn.com">
+                    <md-icon md-svg-icon="etsy"></md-icon>
+                </a>
+            </div>
+        </div>
+        <div ng-cloak>
+            <md-content>
+                <md-tabs md-center-tabs md-swipe-content md-dynamic-height md-border-bottom>
+                    <md-tab label="Story">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Story</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="Art">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Art</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                            <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="Events">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Events</h1>
+                            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
     </div>
-    <div id='socialProperties'>
-      <a href="https://www.nytimes.com">
-        <md-icon md-svg-icon="instagram"></md-icon>
-      </a>
-      <a href="https://www.nba.com">
-        <md-icon md-svg-icon="facebook"></md-icon>
-      </a>
-      <a href="https://www.espn.com">
-        <md-icon md-svg-icon="etsy"></md-icon>
-      </a>
-    </div>
-  </div>
-<!--       <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-        <md-nav-item md-nav-href="#story" value="#story" name="Artists">Story</md-nav-item>
-        <md-nav-item md-nav-click="goto('page2')" name="Events">Art</md-nav-item>
-        <md-nav-item md-nav-click="goto('page2')" name="Events">Events</md-nav-item>
-     <div class="picture-overlay">
-              <md-button class="md-fab md-primary">
-          <md-icon md-svg-src="img/icons/android.svg"></md-icon>
-        </md-button>
-    </div> 
-      </md-nav-bar> -->
-      <div ng-cloak>
-  <md-content>
-    <md-tabs md-center-tabs md-swipe-content md-dynamic-height md-border-bottom>
-      <md-tab label="Story">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Story</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
-        </md-content>
-      </md-tab>
-      <md-tab label="Art">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Art</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
-          <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
-          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-        </md-content>
-      </md-tab>
-      <md-tab label="Events">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Events</h1>
-          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-        </md-content>
-      </md-tab>
-      <md-tab label="Rewards">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Rewards</h1>
-          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-        </md-content>
-      </md-tab>
-    </md-tabs>
-  </md-content>
 </div>
-</div>
-
-      <!-- <md-card>
-        <md-card-header> -->
-<!--           <md-card-avatar>
-            <img src="img/logo.svg"/>
-          </md-card-avatar> -->
-<!--           <md-card-header-text>
-            <span class="md-title">{{artists}}</span>
-            <span class="md-subhead">Charcoal & Paper</span>
-          </md-card-header-text>
-        </md-card-header>
-        <img src="'../../assets/images/annie_cover2.jpg" class="md-card-image" alt="Washed Out"> -->
-<!--         <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Card header</span>
-          </md-card-title-text>
-        </md-card-title> -->
-<!--         <md-card-content>
-          <p>
-            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-          </p>
-        </md-card-content> -->
-<!--       </md-card> -->
-
-      <!-- <md-card>
-        <md-card-header> -->
-<!--           <md-card-avatar>
-            <img src="img/logo.svg"/>
-          </md-card-avatar> -->
-          <!-- <md-card-header-text>
-            <span class="md-title">Brooklyn Street</span>
-            <span class="md-subhead">Charcoal & Paper</span>
-          </md-card-header-text>
-        </md-card-header>
-        <img src="'../../assets/images/annie_cover2.jpg" class="md-card-image" alt="Washed Out"> -->
-<!--         <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Card header</span>
-          </md-card-title-text>
-        </md-card-title> -->
-<!--         <md-card-content>
-          <p>
-            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-          </p>
-        </md-card-content> -->
-      <!-- </md-card> -->
-  </div>
-  <div id="artistStory">
-  <md-card>
+<div id="artistStory">
+    <md-card>
         <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Love after Love</span>
-          </md-card-title-text>
+            <md-card-title-text>
+                <span class="md-headline">Love after Love</span>
+            </md-card-title-text>
         </md-card-title>
         <md-card-content>
-          <p>
-            The time will come 
-            when, with elation 
-            you will greet yourself arriving 
-            at your own door, in your own mirror 
-            and each will smile at the other's welcome, 
-          </p>
-          <p>
-           and say, sit here. Eat. 
-            You will love again the stranger who was your self.
-            Give wine. Give bread. Give back your heart 
-            to itself, to the stranger who has loved you 
-          </p>
-          <p>
-            all your life, whom you ignored 
-            for another, who knows you by heart. 
-            Take down the love letters from the bookshelf, 
-          </p>
-          <p>
-            the photographs, the desperate notes, 
-            peel your own image from the mirror. 
-            Sit. Feast on your life. 
-                - Derek Walcott
-          </p>
+            <p>
+                The time will come when, with elation you will greet yourself arriving at your own door, in your own mirror and each will smile at the other's welcome,
+            </p>
+            <p>
+                and say, sit here. Eat. You will love again the stranger who was your self. Give wine. Give bread. Give back your heart to itself, to the stranger who has loved you
+            </p>
+            <p>
+                all your life, whom you ignored for another, who knows you by heart. Take down the love letters from the bookshelf,
+            </p>
+            <p>
+                the photographs, the desperate notes, peel your own image from the mirror. Sit. Feast on your life. - Derek Walcott
+            </p>
             <div id='artistSig'>
-              <img src="../assets/images/samSig.png">
+                <img src="../assets/images/samSig.png">
             </div>
-        </md-card-content>  
-      </md-card>
-  </div>
-
-  <div>
-      <md-card>
+        </md-card-content>
+    </md-card>
+</div>
+<div>
+    <md-card>
         <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Work</span>
-          </md-card-title-text>
+            <md-card-title-text>
+                <span class="md-headline">Work</span>
+            </md-card-title-text>
         </md-card-title>
         <md-card-content>
-          <p>
-            The time will come 
-            when, with elation 
-            you will greet yourself arriving 
-            at your own door, in your own mirror 
-            and each will smile at the other's welcome, 
-          </p>
-          <p>
-           and say, sit here. Eat. 
-            You will love again the stranger who was your self.
-            Give wine. Give bread. Give back your heart 
-            to itself, to the stranger who has loved you 
-          </p>
-          <p>
-            all your life, whom you ignored 
-            for another, who knows you by heart. 
-            Take down the love letters from the bookshelf, 
-          </p>
-          <p>
-            the photographs, the desperate notes, 
-            peel your own image from the mirror. 
-            Sit. Feast on your life. 
-                - Derek Walcott
-          </p>
+            <p>
+                The time will come when, with elation you will greet yourself arriving at your own door, in your own mirror and each will smile at the other's welcome,
+            </p>
+            <p>
+                and say, sit here. Eat. You will love again the stranger who was your self. Give wine. Give bread. Give back your heart to itself, to the stranger who has loved you
+            </p>
+            <p>
+                all your life, whom you ignored for another, who knows you by heart. Take down the love letters from the bookshelf,
+            </p>
+            <p>
+                the photographs, the desperate notes, peel your own image from the mirror. Sit. Feast on your life. - Derek Walcott
+            </p>
             <div id='artistSig'>
-              <img src="../assets/images/samSig.png">
+                <img src="../assets/images/samSig.png">
             </div>
-        </md-card-content>  
-      </md-card>
-
-
-  </div>
+        </md-card-content>
+    </md-card>
+</div>

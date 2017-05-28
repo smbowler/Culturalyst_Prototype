@@ -1,0 +1,49 @@
+<div class="parent_curated">
+ <h2 style='text-align: center;'>A Local Scene: Frenchmen Street</h2>
+<div class="main_container curated">
+ 
+      <md-button class="md-fab big-fab" aria-label="Big FAB"> Spotted Cat
+      </md-button>
+      <md-button class="md-fab big-fab" aria-label="Big FAB"> DBA
+      </md-button>
+      <md-button class="md-fab big-fab" aria-label="Big FAB"> Cafe Negril
+      </md-button>
+      <md-button class="md-fab big-fab" aria-label="Big FAB"> Maison
+      </md-button>
+  </div>
+</div>
+
+<div>
+  <h2 style='text-align: center;'>Art inspired by Causes</h2>
+  <div class="main_container categories">
+      <md-button class="md-fab big-fab" aria-label="Big FAB">LGBTQ Artists
+      </md-button>
+      <md-button class="md-fab big-fab" aria-label="Big FAB">Black Lives <br/> Matter  Artists
+      </md-button>
+      <md-button class="md-fab big-fab" aria-label="Big FAB">Coastal <br/> Restoration <br/> Artists
+      </md-button>
+      <md-button class="md-fab big-fab" aria-label="Big FAB">
+      </md-button>
+  </div>
+</div>
+
+<div class="main_container featured">
+<!-- // TODO: Refactor so that the bottomsheet opens on each independent card -->   
+    <md-card ng-repeat="artist in featured"  flex>
+        <md-content flex id="content">
+          <img src="../../assets/images/artist_profiles/{{artist.cover}}.png" class="md-card-image" alt="Cover">
+          <md-card-header>
+            <md-card-avatar>
+              <img class="md-user-avatar" src="../../assets/images/artist_profiles/{{artist.profile}}" alt="Cover"/>
+            </md-card-avatar>
+            <md-card-header-text>
+              <span class="md-title">{{artist.name}}</span>
+              <span class="md-subhead">Graffiti</span>
+            </md-card-header-text>
+            <md-button class="md-icon-button contact" ng-click="openBottomSheet()" aria-label="Favorite">
+                <md-icon md-svg-icon="search_black"></md-icon>
+            </md-button>
+          </md-card-header>
+        </md-content>
+      </md-card> 
+</div>

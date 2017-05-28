@@ -71,6 +71,7 @@
   <md-content ng-show='selectionMade()'>
     <md-tabs md-dynamic-height md-border-bottom md-center-tabs>
       <md-tab label="Artists">
+      tina
         <md-content id="tab_background"class="md-padding">
 	    <md-button class="md-primary" md-fab ng-show='selectionMade()' ng-click="openBasics = !openBasics">Filters</md-button>
 
@@ -82,22 +83,23 @@
 
 		  </div>
           <div class="query_results" layout-padding>
-						<a  ng-repeat="artist in results  | filter: searchText" href="/#/artist/{{artist.selectedMedium}}/{{artist.uid}}">
-							 <!-- <md-card class="query_card" md-whiteframe="3">
+						<a  ng-repeat="artist in results  | filter: searchText" href="/#/
+artist/{{artist.selectedMedium}}/{{artist.uid}}">
+<!-- 							 <md-card class="query_card" md-whiteframe="3">
 					        <img ng-src="../../assets/images/cover_4.14.1622.png" class="md-card-image">
-									<img ng-src="{{artist.profImg}}" class="md-card-image">
-					        <md-card-actions layout="row" layout-align="end center"> -->
-<!-- 					          <md-button class="md-fab" ng-click="play()" aria-label="Show Menu" style="background-color: #ffdad5">
-			          			<md-icon md-svg-icon="playArrow_black"></md-icon>
-			        			</md-button> -->
-<!-- 			        			<div class="ui360">
+									<img ng-src="{{artist.profImg}}" class="md-card-image"> -->
+<!-- 					        <md-card-actions layout="row" layout-align="end center">
+			        			<div class="ui360">
 										 <a href="/path/to/an.mp3">play "an.mp3"</a>
 										</div> -->
-<!-- 					        	{{artist.name}} {{artist.name_last}}
-					        </md-card-actions>
+<!-- 					        	{{artist.name}} {{artist.name_last}} -->
+<!-- 					        </md-card-actions>
 					      </md-card> -->
 					       <md-card class="query_card" md-whiteframe="3">
 					        <md-card-header>
+					          <md-button class="md-fab" ng-click="play()" aria-label="Show Menu" style="background-color: #ffdad5">
+			          			<md-icon md-svg-icon="playArrow_black"></md-icon>
+			        			</md-button>
 					          <md-card-header-text>
 					            <span class="md-title">{{artist.name}} {{artist.name_last}}
 					        </md-card-actions></span>

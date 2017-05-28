@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "culturalystmvp1"
+    "default": "culturalystmvp1",
+    "test": "culturalystmvp-5860f",
+    "dev": "culturalystdev",
+    "stg": "culturalyststg",
+    "prd": "culturalystprd"
   }
 }

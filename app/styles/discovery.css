@@ -1,11 +1,18 @@
 .page_container_discover{
-  padding-top: 175px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #f7f9fb;
+  background-color: #f7edec;
 }
+
+.page_container_discover h1{
+  align-self: center;
+  font-family: 'Raleway' !important;
+}
+
 
 .discovery_hero {
   background: url('../../assets/images/wall_background.png') no-repeat center center;
@@ -43,7 +50,7 @@
   flex-direction: column;
   justify-content: space-between;
 /*  height:400px;*/
-  background-color: #f7f9fb;
+  background-color: #f7edec;
   align-items: center;
 }
 
@@ -53,6 +60,11 @@
   margin:10px;
   box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
+}
+
+#card_play_button_included{
+  display: flex;
+  flex-direction: row;
 }
 
 

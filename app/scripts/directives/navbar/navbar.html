@@ -1,15 +1,11 @@
-<div layout="row" ng-controller="NavbarController" >
-
-  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
-
-    <md-toolbar id="search-bar"  layout="row"  ng-show="showPreSearchBar()" layout-align="center center" class="md-whiteframe-z1 navbar_main">
-
-      <div class="navbar_left">
-        <md-button id="main" class="menu" ng-click="openLeftMenu()" aria-label="Show Menu">
+<div layout="row" ng-controller="NavbarController">
+    <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+        <md-toolbar id="search-bar" layout="row" ng-show="showPreSearchBar()" layout-align="center center" class="md-whiteframe-z1 navbar_main">
+            <div class="navbar_left">
+                <!--         <md-button id="main" class="menu" ng-click="openLeftMenu()" aria-label="Show Menu">
           <md-icon md-svg-icon="menu_black"></md-icon>
-        </md-button>
-
-       <!--  <md-button class="hide_link" hide show-lg>
+        </md-button> -->
+                <!--  <md-button class="hide_link" hide show-lg>
           <a ui-sref="main" ui-sref-active="active">
             <h3>Home</h3>
           </a>
@@ -22,113 +18,91 @@
         <md-button aria-label="Search" ng-hide="isLoggedIn()" ng-click="showSearch = !showSearch">
           <md-icon md-svg-icon="search_black"></md-icon>
         </md-button> -->
-      </div>
-
-      <div flex="55" id="nav_logo">
-        <img src="../assets/images/logo_small.png">
-      </div>
-
-    <div class="navbar_right" layout="row" ng-hide="signedUser">
-<!--        <md-button class="hide_link loginSignupBtn">
-       <a href="/#/login"><h3>  Login / Sign up</h3></a>
-       </md-button> -->
-     </div>
-       <md-button aria-label="Search" ng-click="initiateSearch()">
+            </div>
+            <div flex="70" id="nav_logo">
+                <a href="/#/">
+                    <img src="../assets/images/logo_small.png">
+                </a>
+            </div>
+            <div class="navbar_right" layout="row" ng-hide="signedUser">
+                <!--        <md-button class="hide_link loginSignupBtn">
+         <a href="/#/login"><h3>  Login / Sign up</h3></a>
+         </md-button> -->
+            </div>
+            <!--        <md-button aria-label="Search" ng-click="initiateSearch()">
          <md-icon md-svg-icon="search_black"></md-icon>
-       </md-button>
-
-
-<!--      <div class="navbar_right" layout="row" ng-show="signedUser">
+       </md-button> -->
+            <!--      <div class="navbar_right" layout="row" ng-show="signedUser">
         <img  class="profile-image" ng-src="{{signedUser.photoURL}}">
      </div>   -->
-    </md-toolbar>
-             <!-- Search bar -->
-
-      <md-toolbar id="search-bar" layout="row" ng-show="showSearchBar()" layout-align="center center" class="md-whiteframe-z1 navbar_main">
-        <!-- Input Text -->
-        <md-button id="left_search_icon" ng-click="submit()">
-          <md-icon md-svg-icon="search_black"></md-icon>
-        </md-button>
-
-        <md-input-container flex>
-          <!-- <label for="search">Search</label> -->
-          <input id="search-input" type="text" ng-model="search" />
-        </md-input-container>
-
-        <md-button class="md-icon-button" ng-click="endSearch()">
-          <md-icon md-svg-icon="clear_black"></md-icon>
-        </md-button>
-      </md-toolbar>
-
-  <md-sidenav md-component-id="left" mode="push" class="md-sidenav-left md-medium-tall">
-    <md-toolbar class="md-whiteframe-z1" style="background-color: rgba(0, 0, 0, 0.5);" >
-      <h3 ng-show="!isLoggedIn()"></h3>
-      <div layout="column" ng-show="isLoggedIn()"></div>
-
-    </md-toolbar>
-
-    <md-list class="sideNavList" style="background-color: rgba(0, 0, 0, 0);" >
-
-      <md-list-item class="hide_link">
-          <md-button  ng-click="closeLeftMenu()">
-            <a href="/#/"><h3>Home</h3></a>
-          </md-button>
-      </md-list-item >
-
-      <md-list-item ng-show="!isLoggedIn()" class="hide_link">
-          <md-button ng-click="closeLeftMenu()">
-           <a href="/#/about"><h3>About</h3></a>
-          </md-button>
-      </md-list-item>
-
-      <md-list-item class="hide_link">
-          <md-button ng-click="closeLeftMenu()">
-          <a href="/#/discovery"><h3>Discovery</h3></a>
-          </md-button>
-      </md-list-item>
-
-      <md-list-item class="hide_link">
-          <md-button ng-click="closeLeftMenu()">
-          <a href="/#/discovery_B"><h3>Discovery Option 2</h3></a>
-          </md-button>
-      </md-list-item>
-      <md-divider ></md-divider>
-      <md-subheader>For Artists</md-subheader>
-
-<!--       TODO: Make Artist profile show up only if user is logged in & is artist -->
-<!--       <md-list-item class="hide_link">
+        </md-toolbar>
+        <!-- Search bar -->
+        <md-toolbar id="search-bar" layout="row" ng-show="showSearchBar()" layout-align="center center" class="md-whiteframe-z1 navbar_main">
+            <!-- Input Text -->
+            <md-button id="left_search_icon" ng-click="submit()">
+                <md-icon md-svg-icon="search_black"></md-icon>
+            </md-button>
+            <md-input-container flex>
+                <!-- <label for="search">Search</label> -->
+                <input id="search-input" type="text" ng-model="search" />
+            </md-input-container>
+            <md-button class="md-icon-button" ng-click="endSearch()">
+                <md-icon md-svg-icon="clear_black"></md-icon>
+            </md-button>
+        </md-toolbar>
+        <md-sidenav md-component-id="left" mode="push" class="md-sidenav-left md-medium-tall">
+            <md-toolbar class="md-whiteframe-z1" style="background-color: rgba(0, 0, 0, 0.5);">
+                <h3 ng-show="!isLoggedIn()"></h3>
+                <div layout="column" ng-show="isLoggedIn()"></div>
+            </md-toolbar>
+            <md-list class="sideNavList" style="background-color: rgba(0, 0, 0, 0);">
+                <md-list-item class="hide_link">
+                    <md-button ng-click="closeLeftMenu()">
+                        <a href="/#/"><h3>Home</h3></a>
+                    </md-button>
+                </md-list-item>
+                <md-list-item ng-show="!isLoggedIn()" class="hide_link">
+                    <md-button ng-click="closeLeftMenu()">
+                        <a href="/#/about"><h3>About</h3></a>
+                    </md-button>
+                </md-list-item>
+                <md-list-item class="hide_link">
+                    <md-button ng-click="closeLeftMenu()">
+                        <a href="/#/discovery"><h3>Discovery</h3></a>
+                    </md-button>
+                </md-list-item>
+                <md-list-item class="hide_link">
+                    <md-button ng-click="closeLeftMenu()">
+                        <a href="/#/discovery_B"><h3>Discovery Option 2</h3></a>
+                    </md-button>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-subheader>For Artists</md-subheader>
+                <!--       TODO: Make Artist profile show up only if user is logged in & is artist -->
+                <!--       <md-list-item class="hide_link">
           <md-button   ng-click="closeLeftMenu()">
            <a href="/#/artist"><h3>Artist Profile</h3></a>
           </md-button>
       </md-list-item> -->
-
-<!--       TODO: Make signupArtist only show if User is not an artist -->
-      <md-list-item class="hide_link">
-          <md-button   ng-click="closeLeftMenu()">
-           <a href="/#/artist_signup"><h3>Artist Sign Up</h3></a>
-          </md-button>
-      </md-list-item>
-
-      <md-divider ></md-divider>
-
-      <md-divider ></md-divider>
-      <md-subheader>Account</md-subheader>
-
-
-      <md-list-item ng-show="!isLoggedIn()" class="hide_link">
-          <md-button ng-click="closeLeftMenu()">
-           <a href="/#/artist_signup"><h3>Your CulturaLYST</h3></a>
-          </md-button>
-      </md-list-item>
-
-      <md-list-item ng-show="!isLoggedIn()" class="hide_link">
-          <md-button ng-click="logout(); closeLeftMenu()">
-           <a><h3>Logout</h3></a>
-          </md-button>
-      </md-list-item>
-
-    </md-list>
-
-  </md-sidenav>
-
-</div>
+                <!--       TODO: Make signupArtist only show if User is not an artist -->
+                <md-list-item class="hide_link">
+                    <md-button ng-click="closeLeftMenu()">
+                        <a href="/#/artist_signup"><h3>Artist Sign Up</h3></a>
+                    </md-button>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-divider></md-divider>
+                <md-subheader>Account</md-subheader>
+                <md-list-item ng-show="!isLoggedIn()" class="hide_link">
+                    <md-button ng-click="closeLeftMenu()">
+                        <a href="/#/artist_signup"><h3>Your CulturaLYST</h3></a>
+                    </md-button>
+                </md-list-item>
+                <md-list-item ng-show="!isLoggedIn()" class="hide_link">
+                    <md-button ng-click="logout(); closeLeftMenu()">
+                        <a><h3>Logout</h3></a>
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+    </div>
