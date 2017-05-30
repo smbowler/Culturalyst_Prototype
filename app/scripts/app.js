@@ -71,6 +71,11 @@
        controller: 'LoginCtrl',
        controllerAs: 'login'
      })
+      .when('/contactUs', {
+        templateUrl: 'views/contactus.html',
+        controller: 'ContactusCtrl',
+        controllerAs: 'contactUs'
+      })
       .otherwise({
         redirectTo: '/'
       })

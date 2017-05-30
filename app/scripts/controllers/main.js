@@ -65,6 +65,10 @@ angular.module('culturalystApp')
       })
   }
 
+  $scope.changeLocation = function(medium){
+  $location.search({key: medium.name});
+  };
+
 
   $scope.test = function(){
     console.log($scope.selectedSubmedium);

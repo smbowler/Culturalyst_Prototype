@@ -79,6 +79,13 @@ Hero Image CSS*/
   font-family: 'Raleway' !important;
 }
 
+/*Dropdown menus*/
+.md-select-value {
+ font-size: larger;
+ align-self: center;
+ font-family: 'Raleway' !important;
+}
+
 
 /*Artist Card Profile Circles*/
 img.large.md-user-avatar{
