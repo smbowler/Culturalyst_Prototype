@@ -15,15 +15,58 @@ Hero Image CSS*/
 
 
 /*Md-Fab CSS*/
-/*.picture-overlay {*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*height: 400px;*/
-  /*justify-content: flex-end;*/
-  /*align-items: flex-end;*/
-  /*padding-right:10px;*/
-  /*padding-bottom: 5px;*/
-/*}*/
+.picture-overlay {
+  display: flex;
+  flex-direction: column;
+  height: 255px;
+  width: 330px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right:-20px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+.picture-overlay2 {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  width: 180px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top:20px;
+  
+}
+
+.carouselArtistsFab{
+  background-color: green !important;
+  opacity: .0 !important;
+  margin-left: 80px;
+  width:80px !important;
+  height:80px !important;
+}
+.carouselArtistsFab2{
+  background-color: green !important;
+  opacity: .0 !important;
+  margin-left: 80px;
+  width:80px !important;
+  height:80px !important;
+  margin-left: 27px;
+}
+
+
+.mainFab{
+  background-color: #5439e2 !important;
+  width:120px !important;
+  height:120px !important;
+  float: right;
+}
+
+.mainFab p{
+  font-family: 'Raleway' !important;
+  font-size: xx-small;
+  line-height: 90%;
+}
 
 .main_container{
   display: flex;
@@ -46,7 +89,8 @@ Hero Image CSS*/
   min-height: 250px;
   justify-content: space-around;
   align-items: center;
-  padding:20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .description h3{
@@ -59,6 +103,14 @@ Hero Image CSS*/
 
 .description img {
   height:470px;
+}
+
+#river {
+  height:70px;
+}
+
+#bracket {
+  width:7px;
 }
 
 .featured{
