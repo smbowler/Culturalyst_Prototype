@@ -55,13 +55,13 @@
                 <h3>{{selectedArtist.name}} {{selectedArtist.name_last}}</h3>
             </div>
             <div id='socialProperties'>
-                <a href="https://www.nytimes.com">
+                <a href="{{selectedArtist.instagram}}">
                     <md-icon md-svg-icon="instagram"></md-icon>
                 </a>
-                <a href="https://www.nba.com">
+                <a href="{{selectedArtist.twitter}}">
                     <md-icon md-svg-icon="facebook"></md-icon>
                 </a>
-                <a href="https://www.espn.com">
+                <a href="{{selectedArtist.website}}">
                     <md-icon md-svg-icon="etsy"></md-icon>
                 </a>
             </div>
@@ -69,24 +69,84 @@
         <div ng-cloak>
             <md-content>
                 <md-tabs md-center-tabs md-swipe-content md-dynamic-height md-border-bottom>
-                    <md-tab label="Story">
+                    <md-tab label="Bio">
                         <md-content class="md-padding">
-                            <h1 class="md-display-2">Story</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
-                        </md-content>
-                    </md-tab>
-                    <md-tab label="Art">
-                        <md-content class="md-padding">
-                            <h1 class="md-display-2">Art</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
-                            <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
-                            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                            <md-card>
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-headline">{{selectedArtist.name}}'s Statement</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-card-content>
+                                    <p>"{{selectedArtist.biography}}"</p>
+                                    <!--                                     <div id='artistSig'>
+                                        <img src="../assets/images/samSig.png">
+                                    </div> -->
+                                </md-card-content>
+                            </md-card>
                         </md-content>
                     </md-tab>
                     <md-tab label="Events">
                         <md-content class="md-padding">
-                            <h1 class="md-display-2">Events</h1>
-                            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                            <md-card>
+                                <img src="../assets/images/cover_4.14.1622.png" class="md-card-image" alt="Washed Out">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-headline">6/9/17 8pm - Photo Show @ Dauphine St.</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-card-content>
+                                    <p>
+                                        Exhibit at my house. All are welcome. Entrance is $5. Includes 1 beer and a hug.
+                                    </p>
+                                </md-card-content>
+                            </md-card>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="Patron Levels">
+                        <md-content class="md-padding">
+                            <md-card>
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-headline">Access to Works in progress</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-card-content>
+                                    <h3>$1/month</h3>
+                                    <p>
+                                        You'll get to see as my work develops by receiving updates on upcoming songs, illustrations, and general work.
+                                    </p>
+                                    <div id='artistSig'>
+                                        <img src="../assets/images/samSig.png">
+                                    </div>
+                                </md-card-content>
+                            </md-card>
+                            <md-card>
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-headline">Happy hour</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-card-content>
+                                    <h3>$5/month</h3>
+                                    <p>
+                                        Come hang w/ me and other patrons at Pal's lounge once a month.
+                                    </p>
+                                </md-card-content>
+                            </md-card>
+                            <md-card>
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-headline">Studio Tour</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-card-content>
+                                    <h3>$25/month</h3>
+                                    <p>
+                                        Watch me as I record new stuff. 
+                                    </p>
+                                </md-card-content>
+                            </md-card>
                         </md-content>
                     </md-tab>
                 </md-tabs>
@@ -95,54 +155,6 @@
     </div>
 </div>
 <div id="artistStory">
-    <md-card>
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">Love after Love</span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-            <p>
-                The time will come when, with elation you will greet yourself arriving at your own door, in your own mirror and each will smile at the other's welcome,
-            </p>
-            <p>
-                and say, sit here. Eat. You will love again the stranger who was your self. Give wine. Give bread. Give back your heart to itself, to the stranger who has loved you
-            </p>
-            <p>
-                all your life, whom you ignored for another, who knows you by heart. Take down the love letters from the bookshelf,
-            </p>
-            <p>
-                the photographs, the desperate notes, peel your own image from the mirror. Sit. Feast on your life. - Derek Walcott
-            </p>
-            <div id='artistSig'>
-                <img src="../assets/images/samSig.png">
-            </div>
-        </md-card-content>
-    </md-card>
 </div>
 <div>
-    <md-card>
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">Work</span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-            <p>
-                The time will come when, with elation you will greet yourself arriving at your own door, in your own mirror and each will smile at the other's welcome,
-            </p>
-            <p>
-                and say, sit here. Eat. You will love again the stranger who was your self. Give wine. Give bread. Give back your heart to itself, to the stranger who has loved you
-            </p>
-            <p>
-                all your life, whom you ignored for another, who knows you by heart. Take down the love letters from the bookshelf,
-            </p>
-            <p>
-                the photographs, the desperate notes, peel your own image from the mirror. Sit. Feast on your life. - Derek Walcott
-            </p>
-            <div id='artistSig'>
-                <img src="../assets/images/samSig.png">
-            </div>
-        </md-card-content>
-    </md-card>
 </div>

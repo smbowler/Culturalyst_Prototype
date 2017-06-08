@@ -71,13 +71,17 @@
 		  </md-input-container><br>
  		</div>
 
-    <md-input-container class="md-block" flex-gt-sm style="padding-bottom: 10px">
+<!--     <md-input-container class="md-block" flex-gt-sm style="padding-bottom: 10px">
       <label>Neighborhood</label>
         <md-select ng-model="currentUser.neighborhood">
           <md-option ng-repeat="neighborhood in neighborhoods" value="{{neighborhood.abbrev}}">{{neighborhood.abbrev}}
           </md-option>
         </md-select>
-    </md-input-container>
+    </md-input-container> -->
+        <md-input-container class="md-block" flex-gt-sm="">
+		    <label>Neighborhood</label>
+		    <input ng-model="currentUser.neighborhood" type="text">
+		  </md-input-container><br>
 	 </md-content>
 
 <!-- 	 <div id="saveBasics">
@@ -199,17 +203,17 @@
 	<md-content layout-padding>
 	  <md-input-container class="md-block">
 	    <label>Website</label>
-	    <input ng-model="website">
+	    <input ng-model="currentUser.website">
 	  </md-input-container>
 
 	  <md-input-container class="md-block">
 	    <label>Instagram</label>
-	    <input ng-model="instagram" type="text">
+	    <input ng-model="currentUser.instagram" type="text">
 	  </md-input-container>
 
 	  <md-input-container class="md-block">
 	    <label>Twitter</label>
-	    <input ng-model="twitter" type="text">
+	    <input ng-model="currentUser.twitter" type="text">
 	  </md-input-container><br>
 
 	  <md-input-container class="md-block">

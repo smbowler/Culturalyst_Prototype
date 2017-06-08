@@ -16,8 +16,12 @@ angular.module('culturalystApp')
     };
   })
 
-  .controller('NavbarController', ['$scope', '$mdSidenav', 'auth1', '$mdDialog',
-  function($scope, $mdSidenav, auth1, $mdDialog) {
+  .controller('NavbarController', ['$scope', '$mdSidenav', 'auth1', '$mdDialog', '$rootScope',
+  function($scope, $mdSidenav, auth1, $mdDialog, $rootScope) {
+
+  $scope.reset = function(){
+    console.log($rootScope.selectedMedium);
+  } 
 
   $scope.openLeftMenu = function() {
     $mdSidenav('left').toggle();

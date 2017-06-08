@@ -32,14 +32,14 @@ TODO:
       firebase.database().ref('Artists/' + medium).push({
         name: user.name,
         name_last: user.name_last,
-        birthday: user.dob,
         selectedMedium: medium,
         selectedSubmedium:subMedium,
-        hometown: user.hometown,
-        hometownState: user.hometown_state,
-        sampleWork: user.sampleWork,
-        story: user.biography,
-        profImg: user.optimizedImg
+        neighborhood: user.neighborhood,
+        profImg: user.optimizedImg,
+        biography: user.biography,
+        website: user.website,
+        instagram: user.instagram,
+        twitter: user.twitter
       });
     };
 
